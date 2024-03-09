@@ -57,20 +57,16 @@
       const title = document.getElementById('input-title').value;
       const content = document.getElementById('input-content').value;
   
-      // Create a new card with the input values
       createNewCard(title, content);
     });
   
-    // Add event listener to the delete buttons of existing cards
     document.querySelectorAll('.btn-danger').forEach(function(btn) {
       btn.addEventListener('click', function(event) {
         event.preventDefault();
-        // Remove the card when the delete button is clicked
         this.closest('.card').remove();
       });
     });
   
-    // Function to create a new card
     function createNewCard(title, content) {
       const cardContainer = document.querySelector('.row.mt-4');
       const cardDiv = document.createElement('div');
@@ -89,7 +85,6 @@
       cardDiv.innerHTML = cardHtml;
       cardContainer.appendChild(cardDiv);
   
-      // Add event listener to the delete button of the new card
       const deleteBtn = cardDiv.querySelector('.btn-danger');
       deleteBtn.addEventListener('click', function(event) {
         event.preventDefault();
